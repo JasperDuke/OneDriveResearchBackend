@@ -69,7 +69,21 @@ app.get("/onedrive/files", (req, res) => {
       headers: { Authorization: `Bearer ${accessToken}` },
     })
     .then((response) => {
-      res.json(response.data);
+      //   const allowedExtensions = [
+      //     ".txt",
+      //     ".pptx",
+      //     ".pdf",
+      //     ".docx",
+      //     ".xlsx",
+      //     ".csv",
+      //     ".mp4",
+      //   ];
+      //   const filteredFiles = response.data.value.filter((item) => {
+      //     return allowedExtensions.includes(
+      //       item.name ? `.${item.name.split(".").pop()}` : ""
+      //     );
+      //   });
+      return res.status(200).json(response.data.value);
     })
     .catch((err) => res.status(500).json({ error: err.message }));
 });
