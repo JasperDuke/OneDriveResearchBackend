@@ -13,7 +13,7 @@ app.use(cors());
 const msalConfig = {
   auth: {
     clientId: process.env.AZURE_CLIENT_ID,
-    authority: `https://login.microsoftonline.com/${process.env.AZURE_TENANT_ID}`,
+    authority: `https://login.microsoftonline.com/common`,
     clientSecret: process.env.AZURE_CLIENT_SECRET,
   },
 };
